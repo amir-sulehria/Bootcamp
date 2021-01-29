@@ -2,11 +2,12 @@
 
 name: Deploy Website
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ class-1 ]
+    branches:
+      - class-1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,4 +30,3 @@ jobs:
         run: npm install -g surge
       - name: Run Surge
         run: surge ./ bootcamp2021-class1.surge.sh --token ${{secrets.SURGE_TOKEN}}
-        
